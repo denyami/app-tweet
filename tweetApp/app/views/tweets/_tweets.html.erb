@@ -1,0 +1,15 @@
+
+<% @tweets.each do |tweet| %>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading"><%= User.find(tweet.user_id).email %></h4>
+    <h1><%= tweet.body %></h1>
+    <hr>
+    <p class="mb-10">
+    <span class=""><%= link_to 'Show', tweet %></span>
+          <span class=""><%= link_to 'Edit', edit_tweet_path(tweet) %></span>
+          <span class=""><%= link_to 'Destroy', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </p>
+  </div>
+  <br>
+<% end %>
+
